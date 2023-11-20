@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+
+@keyframes snow-fall {
+    from {bottom: 110%}
+    to {bottom: 150px}
+}
+
+@keyframes snow-wave {
+    0% {transform: translateX(0)}
+    50% {transform: translateX(50px)}
+    100% {transform: translateX(0)}
+}
+
+:root {
+    --rot: 20deg;
+    --tr: 20px;
+    --trm: -20px;
+    --rotm: -20deg;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #124, #234);
+}
+
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sky#sunrise {
+    background: linear-gradient(to bottom, #ddb, #eec);
+}
+
+.sky#midday {
+    background: linear-gradient(to bottom, #bdd, #cee);
+}
+
+.sky#sunset {
+    background: linear-gradient(to bottom, #d99, #eaa);
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    background: repeating-linear-gradient(135deg,
+    crimson 0, crimson 2rem,
+    green 2rem, green 4rem,
+    white 4rem, white 6rem
+    );
+    padding: 3rem;
+    z-index: 999;
+    width: 22rem;
+}
+
+.inner {
+    outline: 1rem solid green;
+    border: 1rem solid crimson;
+    background: white;
+    padding: 1rem;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+}
+.timer > div {
+    font-size: 3em;
+}
+
+.timer > div::before {
+    content: ":";
+    margin: 15px;
+}
+
+.timer > div:first-child::before {
+    display: none;
+}
+
+.timer > div > span {
+    position: relative;
+}
+
+.timer > div > span::after {
+    content: attr(id);
+    font-size: 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.bottom {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+}
+
+.bottom2 {
+    background-color: #fbfbfb;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+}
+
+.sun-moon {
+    position: absolute;
+    display: flex;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(var(--rot));
+}
+
+.sun {
+    margin-left: 75vw;
+    background-color: #ffb;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    box-shadow: #ffb 0 0 10px;
+}
+
+.star {
+    position: absolute;
+    background-color: #fbfbfb;
+    width: 5px;
+    height: 5px;
+    border-radius: 100px;
+    z-index: -999;
+}
+
+body.day .star {
+    display: none;
+}
+
+.star#star1 { top: 23%; left: 8%; }
+.star#star2 { top: 14%; left: 32%; }
+.star#star3 { top: 9%; left: 90% }
+.star#star4 { top: 34%; left: 28%; }
+.star#star5 { top: 10%; left: 44%; }
+.star#star6 { top: 5%; left: 55%; }
+.star#star7 { top: 18%; left: 53%; }
+.star#star8 { top: 24%; left: 65%; }
+.star#star9 { top: 36%; left: 76%; }
+.star#star10 { top: 16%; left: 83%; }
+
+.snowflake {
+    position: absolute;
+    background-color: #fbfbfb;
+    opacity: .8;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    animation: snow-fall 10s ease-out infinite both, snow-wave 5s ease-in-out infinite;
+}
+
+.snowflake#snowflake1 { left: 11%; animation-delay: 2.6s }
+.snowflake#snowflake2 { left: 33%; animation-delay: 9.2s }
+.snowflake#snowflake3 { left: 88%; animation-delay: 6s }
+.snowflake#snowflake4 { left: 21%; animation-delay: 0.8s }
+.snowflake#snowflake5 { left: 6%; animation-delay: 4.4s }
+.snowflake#snowflake6 { left: 42%; animation-delay: 3.4s }
+.snowflake#snowflake7 { left: 54%; animation-delay: 7.8s }
+.snowflake#snowflake8 { left: 64%; animation-delay: 6.8s }
+.snowflake#snowflake9 { left: 72%; animation-delay: 5.6s }
+.snowflake#snowflake10 { left: 81%; animation-delay: 1.6s }
+
+.tree {
+    position: absolute;
+}
+
+.tree#tree1 { bottom: 148px; left: 6%; }
+.tree#tree2 { bottom: 76px; left: 11%; }
+.tree#tree3 { bottom: 116px; left: 15%; }
+.tree#tree4 { bottom: 34px; left: 21%; }
+.tree#tree5 { bottom: 58px; left: 34%; }
+.tree#tree6 { bottom: 100px; left: 49%; }
+.tree#tree7 { bottom: 179px; left: 94%; }
+.tree#tree8 { bottom: 24px; left: 65%; }
+.tree#tree9 { bottom: 115px; left: 79%; }
+.tree#tree10 { bottom: 76px; left: 89%; }
